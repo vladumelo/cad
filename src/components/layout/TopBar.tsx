@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useCadStore } from '@/store/useCadStore';
 import { DisplayMode } from '@/types/domain';
 
@@ -29,6 +30,9 @@ export const TopBar = () => {
         ))}
       </div>
       <div className="flex items-center gap-2">
+        <Link href="/docs" className="rounded bg-slate-100 px-3 py-1 text-sm">
+          Docs
+        </Link>
         <button className="rounded bg-slate-100 px-3 py-1" onClick={undo}>Undo</button>
         <button className="rounded bg-slate-100 px-3 py-1" onClick={redo}>Redo</button>
         <button className="rounded bg-slate-100 px-3 py-1" onClick={() => setSceneMode(sceneMode === 'beauty' ? 'technical' : 'beauty')}>
